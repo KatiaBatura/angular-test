@@ -1,0 +1,78 @@
+.container {
+  padding: 20px;
+  position: relative;
+
+  @media screen and (min-width: 768px){
+    padding: 20px 40px;
+  }
+}
+
+* {
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.accordion {
+  padding: 0;
+
+  .accordion-items {
+    list-style: none;
+    margin: 10px 0;
+
+    .toggle {
+      background: rgba(177, 221, 169, 0.7);
+      padding: 20px;
+      border-radius: 2px;
+      transition: background .3s ease;
+      cursor: pointer;
+      white-space: nowrap;
+      position: relative;
+
+      &:hover {
+        background: rgba(177, 221, 169, 0.9);
+      }
+
+      div {
+        padding: 10px;
+        white-space: normal;
+
+        @media screen and (min-width: 768px){
+          display: inline-block;
+          width:33%;
+        }
+      }
+    }
+  }
+}
+
+.inner {
+  border: 1px solid rgba(177, 221, 169, 1);
+  div {
+    padding: 5px 20px;
+
+    &:first-child {
+      padding-top: 20px;
+    }
+    &:last-child {
+      padding-bottom: 20px;
+    }
+  }
+
+}
+
+.title {
+  font-weight: bold;
+
+  @media screen and (min-width: 768px){
+    display: inline-block;
+    width:33%;
+  }
+}
+
+.info {
+
+  @media screen and (min-width: 768px){
+    display: inline-block;
+    width: 66%;
+  }
+}

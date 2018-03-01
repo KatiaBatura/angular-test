@@ -1,0 +1,45 @@
+<div class='container'>
+
+  <h1> Пользователи</h1>
+
+  <ul class="accordion">
+    <li *ngFor='let user of usersData; let i = index' class="accordion-items">
+
+      <div class='toggle' (click)="viewUser(i)">
+        <div>{{user.name}} {{user.username}}</div>
+        <div>{{user.email}}</div>
+        <div>{{user.phone}}</div>
+      </div>
+
+      <div  @show class="inner" *ngIf="isActive(i)">
+
+        <div>
+          <span class="title"> Адрес: </span>
+          <span class="info">{{user.address.zipcode}}, {{user.address.city}}, {{user.address.street}}, {{user.address.suite}}</span>
+        </div>
+
+        <div>
+          <span class="title"> Координаты для GPS: </span>
+          <span class="info">{{user.address.geo.lat}}, {{user.address.geo.lng}}</span>
+        </div>
+
+        <div>
+          <span class="title"> Вебсайт: </span>
+          <span class="info">{{user.website}} </span>
+        </div>
+
+        <div>
+          <span class="title"> Компания: </span>
+          <span class="info">{{user.company.name}} </span>
+        </div>
+
+        <div>
+          <span class="title"> Девиз: </span>
+          <span class="info">{{user.company.catchPhrase}} </span>
+        </div>
+
+      </div>
+    </li>
+  </ul>
+
+</div>
